@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        .username {
+            margin: 100px auto 0;
+            width: 310px;
+            height: 30px;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #bdbdbd;
+        }
+        .username input {
+            width: 290px;
+            height: 100%;
+            outline: none;
+            border: 0;
+        }
+        .password {
+            position: relative;
+            margin: 10px auto 10px;
+            width: 310px;
+            height: 30px;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #bdbdbd;
+        }
+        .password input {
+            width: 290px;
+            height: 100%;
+            outline: none;
+            border: 0;
+        }
+        .password button {
+            border: 0;
+            position: absolute;
+            right: 0;
+            top: 5px;
+            color: purple;
+            background-color: white;
+        }
+        .submmit {
+            display: flex;
+            justify-content: center;
+        }
+        .submmit button {
+            border: 0;
+            color: white;
+            padding: 14px 120px;
+            background-color: #d24844;
+        }
+    </style>
+</head>
+<body>
+    <div class="username">
+        <input type="text" placeholder="请输入用户名" id="username">
+    </div>
+    <div class="password">
+        <input type="password" placeholder="请输入密码" id="password">
+        <button id="password_btn">查看</button>
+    </div>
+    <div class="submmit">
+        <button id="sub_btn">提交</button>
+    </div>
+    <script>
+        var password = document.getElementById('password');
+        var sub_btn = document.getElementById('sub_btn');
+        var password_btn = document.getElementById('password_btn');
+        
+        sub_btn.onclick = function(){
+            sub_btn.innerHTML= '你好';
+            sub_btn.disabled = true;
+        }
+        var flag = 0;
+        password_btn.onclick = function() {
+            if (flag==0) {
+                password.type = 'text'; 
+                flag = 1;
+            }else {
+                password.type = 'password'
+                flag = 0;
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin: 100px auto;
+        }
+        .change {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="first"></div>
+    <script>
+        var first = document.querySelector('div');
+        first.onclick = function(){
+            // this.className = 'change';
+            // 当修改样式较多的情况下采纳
+            // 覆盖掉以前的类名
+            this.className = 'change first';
+            // 不想覆盖的话采取多类名的方法
+        }
+    </script>
+</body>
+</html>

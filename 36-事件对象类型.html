@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>asdsa</div>
+    <a href="http://www.baidu.com">baidu</a>
+    <a href="http://www.bilibili.com" class="nihao">bilibili</a>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('mouseover',function(e){
+            console.log(e.type);
+        })
+        var a = document.querySelector('a');
+        a.addEventListener('click',function(e){
+            e.preventDefault()
+            // 阻止页面跳转
+        })
+        var a2 = document.querySelector('.nihao');
+        a2.onclick = function(e){
+            return false;
+            // 也可以阻止页面跳转不过后面的内容不在执行
+            // 而且只限于传统的不可以在监听事件里写
+            alert('sadsa');
+        }
+    </script>
+</body>
+</html>

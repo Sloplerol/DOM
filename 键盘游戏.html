@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .btn_body {
+            width: 360px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        button {
+            border: 0;
+            margin: 10px;
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+        }
+        .back_color {
+            background-color: aquamarine;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <img src="/images/angel.gif" alt="">
+    <div class="btn_body">
+        <button>a</button>
+        <button>b</button>
+        <button>c</button>
+        <button>d</button>
+        <button>e</button>
+        <button>f</button>
+        <button>g</button>
+        <button>h</button>
+        <button>i</button>
+        <button>j</button>
+        <button>k</button>
+        <button>l</button>
+        <button>m</button>
+        <button>n</button>
+        <button>o</button>
+        <button>p</button>
+    </div>
+    <script>
+        var btn = document.querySelectorAll('button');
+        var images = document.querySelector('img');
+        document.addEventListener('mousemove',function(e){
+            var x = e.pageX;
+            var y = e.pageY;
+            images.style.left = x + 'px';
+            images.style.top = y + 'px';
+        })
+        document.addEventListener('keyup',function(e){
+            var code = e.keyCode;
+            for (var i = 65;i<=80;i++) {
+                btn[i-65].style.backgroundColor = '';
+                if (code==i) {
+                    btn[i-65].style.backgroundColor = 'pink';
+                }
+            }
+            
+        })
+        
+    </script>
+</body>
+</html>

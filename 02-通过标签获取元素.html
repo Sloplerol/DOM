@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>134</li>
+        <li>134</li>
+        <li>134</li>
+        <li>134</li>
+    </ul>
+    <ol id="ol">
+        <li>1233</li>
+        <li>1233</li>
+        <li>1233</li>
+        <li>1233</li>
+    </ol>
+    <script>
+        var list = document.getElementsByTagName('li')
+        // 通过伪数组的形式存储li
+        console.log(list);
+        console.log(list[0]);
+        // var ol = document.getElementsByTagName('ol');
+        // 单是一个伪数组是不能作为父元素的
+        // 必须要指明
+        // console.log(ol[0].getElementsByTagName('li'));
+        // emements.getElementsByTagName element必须指明是哪个元素对象
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+    </script>
+</body>
+</html>

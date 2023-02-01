@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+    <script>
+        var div = document.querySelectorAll('div');
+        div[0].onclick = function(){
+            alert('666');
+            div[0].onclick = null;
+            // 传统方法实现解绑
+        }
+        //监听事件实现解绑
+        div[1].addEventListener('click',fn);
+        function fn(){
+            alert('bijiaodoap');
+            div[1].removeEventListener('click',fn);
+        }
+    </script>
+</body>
+</html>

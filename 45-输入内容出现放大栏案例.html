@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .ipt_box {
+            position: relative;
+            width: 200px;
+        }
+        .ipt_top {
+            display: none;
+            position: absolute;
+            width: 200px;
+            font-size: 18px;
+            height: 20px;
+            background-color: aqua;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 16px;
+        }
+        .ipt_top::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-top-color: aqua;
+            top: 20px;
+            content: '';
+            left: 20px;
+        }
+        input {
+            display: block;
+            width: 200px;
+            position: absolute;
+            top: 26px;
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="ipt_box">
+        <div class="ipt_top"></div>
+        <input type="text">
+    </div>
+    <script>
+        var ipt = document.querySelector('input');
+        var ipt_top = document.querySelector('.ipt_top');
+        // document.addEventListener('keyup',function(e){
+        //     if(e.keyCode===83) {
+        //         ipt.focus();
+        //     }
+        // })
+        // 如果此处写keypress和keydown会出错
+        // 当按第一下没反应因为keydown按下就执行if else语句发现为空内容再进去此时并不执行
+        // keydown还不能识别功能键回车啥的上面没反应
+        ipt.addEventListener('keyup',function(){
+            if (ipt.value=='') {
+                ipt_top.style.display = 'none';
+            }else {
+                ipt_top.style.display = 'block';
+                ipt_top.innerText = this.value;
+            }
+        })
+        ipt.addEventListener('blur',function(){
+            ipt_top.style.display = 'none';
+        })
+        ipt.addEventListener('focus',function(){
+            if (ipt.value=='') {
+                ipt_top.style.display = 'none';
+            }else {
+                ipt_top.style.display = 'block';
+            }
+        })
+    </script>
+</body>
+</html>

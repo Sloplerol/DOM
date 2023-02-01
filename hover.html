@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 300px;
+            margin: 100px auto;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th,
+        td {
+            
+            padding: 10px 50px 10px 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>123</th>
+                    <th>123</th>
+                    <th>123</th>
+                    <th>123</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+                <tr>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                    <td>123</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var tr = document.querySelector('tbody').querySelectorAll('tr');
+        var th_tr  = document.querySelector('thead').querySelectorAll('tr');
+        for (var i = 0;i<tr.length;i++) {
+            tr[i].onmouseover = function(){
+                this.style.backgroundColor = 'pink';
+            }
+            tr[i].onmouseout = function(){
+                this.style.backgroundColor = '';
+            }
+        }
+        th_tr[0].onmouseover = function(){
+            this.style.backgroundColor = 'aqua';
+        }
+        th_tr[0].onmouseout = function(){
+            this.style.backgroundColor = '';
+        }
+    </script>
+</body>
+</html>

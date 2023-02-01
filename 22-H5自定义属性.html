@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-fuck="3" date-list-name="joe"></div>
+    <script>
+        var div = document.querySelector('div');
+        // console.log(div.getAttribute('date-index'));
+        // 通过getAttribute获取自定义属性值
+        console.log(div.dataset.fuck);
+        console.log(div.dataset);
+        console.log(div.dataset['fuck']);
+        // dataset存放了所有已data开头的自定义属性
+        // 用dataset想要获取第二个data属性值比较麻烦
+        // 兼容性差g都不用
+        // console.log(div.dataset.listName);
+        // console.log(div.dataset['listName']);
+    </script>
+</body>
+</html>

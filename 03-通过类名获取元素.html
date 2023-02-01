@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="nav">123</div>
+    <div class="box">123</div>
+    <div class="box">123</div>
+    <script>
+        var category = document.getElementsByClassName('box');
+        console.log(category);
+        // H5新增获取类选择器第一个的数据
+        var firstelement = document.querySelector('.box');
+        console.log(firstelement);
+        var nav = document.querySelector('#nav')
+        console.log(nav);
+        // 获取类里的所有元素和getElementByClassName等价但简短
+        var box = document.querySelectorAll('.box')
+        console.log(box);
+    </script>
+</body>
+</html>

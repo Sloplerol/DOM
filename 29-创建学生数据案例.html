@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 100px auto;
+        }
+        th,td {
+            padding: 20px;
+        }
+        
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>123</th>
+                <th>123</th>
+                <th>123</th>
+                <th>123</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        
+        
+    </table>
+    <script>
+        var datas = [
+            {
+                rname: 'ljm',
+                age: 98,
+                hobby: 'chong'
+            },
+            {
+                rname: 'zjj',
+                age: 18,
+                hobby: 'codding'
+            },
+            {
+                rname: 'sad',
+                age: 921,
+                hobby: 'xuexi'
+            }
+        ]
+        var tbody = document.querySelector('tbody');
+        for (var i = 0;i<datas.length;i++) {
+            // 创建tr并添加到tbody里面
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 添加每一行对应多少个格
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                // 写入数据
+                td.innerHTML = datas[i][k];
+            }
+            //创建删除模块
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">delete</a>';
+            tr.appendChild(td);
+            // 单元格模块制作完成
+        }
+        // 删除模块制作
+        var as = document.querySelectorAll('a');
+        for (var j = 0;j<as.length;j++) {
+            as[j].onclick = function(){
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

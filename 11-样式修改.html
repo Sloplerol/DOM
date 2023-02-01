@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="color_change"></div>
+    <script>
+        var color_change = document.getElementById('color_change');
+        color_change.onclick = function(){
+            // js添加的css样式为行内样式权重比较高
+            // 书写样式采取驼峰命名法
+            this.style.backgroundColor = 'pink';
+            //修改样式本身写this
+        }
+    </script>
+</body>
+</html>

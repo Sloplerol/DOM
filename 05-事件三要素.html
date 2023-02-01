@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>dianji</div>
+    <div id="title">asd</div>
+    <button id="btn">你好</button>
+    <script>
+        // 1.事件触发源
+        var btn = document.getElementById('btn');
+        // 2.事件触发类型/绑定事件 鼠标触发onclick
+        btn.onclick = function(){
+            alert('hello world');
+        }
+        // 3.事件执行程序
+        var button = document.querySelector('div');
+        button.onclick = function(){
+            console.log('666');
+        }
+        var dianji = document.getElementById('title');
+        dianji.onclick = function(){
+            console.log('nihao');
+        }
+    </script>
+</body>
+</html>

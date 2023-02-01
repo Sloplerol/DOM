@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // var son = document.querySelector('.son');
+        // // 监听事件第三个参数如果是true则处于捕获阶段 false则为冒泡阶段
+        // // 捕获阶段从上到下监听document->html->body->father->son一个个捕获如果有监听器则执行
+        // son.addEventListener('click',function(){
+        //     alert('xing');
+        // },true);
+        // var father = document.querySelector('.father');
+        // // 监听事件第三个参数如果是true则处于捕获阶段 false则为冒泡阶段
+        // // 捕获阶段从上到下监听document->html->body->father->son一个个捕获如果有监听器则执行
+        // father.addEventListener('click',function(){
+        //     alert('666');
+        // },true);
+        // 点击先执行father再执行son
+        // 如果第三个参数为false或者省略则执行冒泡 冒泡顺序相反
+        var son = document.querySelector('.son');
+        son.addEventListener('click',function(){
+            alert('son');
+        },true);
+        var father = document.querySelector('.father');
+        father.addEventListener('click',function(){
+            alert('father');
+        },true);
+        document.documentElement.addEventListener('click',function(){
+            alert('html');
+        },true);
+        //三个要么同时为true或同时为false
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入内容">
+    <button>提交</button>
+    <script>
+        var input = document.querySelector('input');
+        var btn = document.querySelector('button');
+        btn.onclick = function(){
+            // 通过innerHTML修改是没有用的
+            input.placeholder = '拒绝访问';
+            // disable设置禁用按钮
+            btn.disabled = true;
+        }
+
+    </script>
+</body>
+</html>

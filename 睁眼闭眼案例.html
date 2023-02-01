@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            margin: 200px auto;
+        }
+        .username input,
+        .password input {
+            width: 300px;
+            height: 40px;
+            border: 1px solid transparent;
+            border-bottom: 1px solid black;
+            font-size: 18px;
+        }
+        .password {
+            position: relative;
+            margin: 20px 0;
+        }
+        .password i img {
+            position: absolute;
+            top: 14px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: url(/images/close.png);
+            cursor: pointer;
+        }
+        
+        button {
+            font-size: 17px;
+            transform: translateX(130px);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="username">
+            <input type="text" id="username">
+        </div>
+        <div class="password">
+            <input type="password" id="password">
+            <i><img src="/images/close.png" alt=""></i>
+        </div>
+        <button>submit</button>
+    </div>
+    <script>
+        var password = document.getElementById('password');
+        var img = document.querySelector('img');
+        var btn = document.querySelector('button');
+        var username = document.getElementById('username');
+        var ipt = document.querySelectorAll('input');
+        var flag = 1;
+        img.onclick = function(){
+            if (flag == 1) {
+                img.src = '/images/open.png';
+                password.type = 'text';
+                flag = 0;
+            }else {
+                img.src = '/images/close.png';
+                password.type = 'password';
+                flag = 1;
+            }
+        }
+        btn.onclick = function(){
+            if (password.value==''||username.value=='') {
+                alert('请输入内容');
+            }else {
+                alert('输入正确');
+            }
+        }
+    </script>
+</body>
+</html>
