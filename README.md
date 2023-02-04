@@ -17,5 +17,5 @@
  
  
  # Ending
- > Now let's get started working with your elements
+ > **Now let's get started working with your elements**
   
